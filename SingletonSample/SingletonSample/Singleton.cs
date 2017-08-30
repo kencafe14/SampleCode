@@ -4,7 +4,7 @@ namespace SingletonSample
 {
     public class Singleton
     {
-        private static Singleton _singleInstance = new Singleton();
+        private static Singleton _singleton = new Singleton();
         private Singleton()
         {
             Console.WriteLine("インスタンスを生成しました。");
@@ -12,7 +12,7 @@ namespace SingletonSample
 
         public static Singleton GetInstance()
         {
-            return _singleInstance;
+            return _singleton;
         }
     }
 }

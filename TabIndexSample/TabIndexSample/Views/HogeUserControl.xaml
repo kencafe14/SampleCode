@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="TabIndexSample.Views.HogeUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Height="350"
+             Width="525"
+             Background="LightSlateGray">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0"
+               Content="TabIndex1"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center"
+               Margin="90,0,0,0"/>
+        <TextBox Grid.Row="0"
+                 Width="200"
+                 Height="30"
+                 TabIndex="1"
+                 FocusVisualStyle="{StaticResource FocusVisualStyleKey}"/>
+        <Label Grid.Row="1"
+               Content="TabIndex2"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center"
+               Margin="90,0,0,0"/>
+        <TextBox Grid.Row="1"
+                 Width="200"
+                 Height="30"
+                 TabIndex="2"
+                 FocusVisualStyle="{StaticResource FocusVisualStyleKey}"/>
+        <Label Grid.Row="2"
+               Content="TabIndex0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center"
+               Margin="90,0,0,0"/>
+        <TextBox Grid.Row="2"
+                 Width="200"
+                 Height="30"
+                 TabIndex="0"
+                 FocusVisualStyle="{StaticResource FocusVisualStyleKey}"/>
+    </Grid>
+</UserControl>

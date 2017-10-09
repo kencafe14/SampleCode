@@ -1,0 +1,18 @@
+﻿<Window x:Class="TabIndexSample.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="TabIndexSample" Height="350" Width="525">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding NavigateCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <ContentControl prism:RegionManager.RegionName="ContentRegion"
+                        FocusVisualStyle="{StaticResource FocusVisualStyleKey}"
+                        IsTabStop="False"/>
+    </Grid>
+</Window>

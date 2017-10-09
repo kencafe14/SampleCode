@@ -1,0 +1,51 @@
+﻿<Window x:Class="NotificationSample.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:views="clr-namespace:NotificationSample.Views"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="NotificationSample" Height="350" Width="525"
+        Background="LightSlateGray">
+    <i:Interaction.Triggers>
+        <prism:InteractionRequestTrigger SourceObject="{Binding OpenChildDialogRequest}">
+            <prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True" >
+                <prism:PopupWindowAction.WindowContent>
+                    <views:ChildDialog />
+                </prism:PopupWindowAction.WindowContent>
+            </prism:PopupWindowAction>
+        </prism:InteractionRequestTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0"
+               Grid.Column="0"
+               Content="ポップアップで入力された文字："
+               FontSize="12"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Bottom"/>
+        <TextBox Grid.Row="0"
+                 Grid.Column="1"
+                 Height="30"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Bottom"
+                 Width="200"
+                 Text="{Binding OwnerInputValue.Value}"/>
+        <Button Grid.Row="1"
+                Grid.Column="1"
+                Content="ポップアップ表示"
+                Width="150"
+                Height="50"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Command="{Binding OpenChildDialogCommand}"/>
+    </Grid>
+</Window>

@@ -15,6 +15,7 @@ namespace NotificationSample.ViewModels
 
         public MainWindowViewModel()
         {
+            //テストのためコメント追加
             OpenChildDialogCommand = new DelegateCommand(() =>
             {
                 var inputValueNotification = new InputValueNotification() { Title = "NotificationSample" };
